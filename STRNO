@@ -1,0 +1,44 @@
+// https://www.codechef.com/APRIL20B/problems/STRNO
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	long long int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long int x,k,count=0;
+	    cin>>x>>k;
+	    while(x%2==0)
+	    {
+	        x=x/2;count++;
+	    }
+	   
+	    for(long long int i=3;i*i<=x;i+=2)
+	    {
+	        while(x%i==0)
+	        {
+	            x=x/i;
+	            count++;
+	            
+	        }
+	    }
+	    
+	        if(x>2)count++;
+	        if(count<k)
+	        {
+	     cout<<0<<endl;
+	     
+	        }
+	        else
+	        {
+	            cout<<1<<endl;
+	        }
+	    
+	    
+	}
+	return 0;
+}
