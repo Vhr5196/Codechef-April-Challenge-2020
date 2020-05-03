@@ -1,0 +1,51 @@
+//https://www.codechef.com/APRIL20B/problems/COVIDLQ
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,j=0,space=0;string res;
+	    cin>>n;
+	    long long int a[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    while(a[j]!=1)
+	    {
+	        j++;
+	    }
+	    
+	    for(int i=j+1;i<n;i++)
+	    {
+	       space++;
+	       if(a[i]==1)
+	       {
+	         if(space<6)
+	         {
+	             res="NO";
+	             break;
+	             
+	         }
+	         else
+	         {
+	             space=0;
+	         }
+	       }
+	    }
+	    if(res=="NO")
+	    {
+	        cout<<"NO"<<endl;
+	        
+	    }
+	    else
+	    {
+	        cout<<"YES"<<endl;
+	    }
+	}
+	return 0;
+}
